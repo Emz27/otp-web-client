@@ -61,7 +61,7 @@ otp.core.Webapp = otp.Class({
             search = /([^&=]+)=?([^&]*)/g,
             decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
             query  = window.location.search.substring(1);
-
+        alert(query);
         //Parser URL query string
         while (match = search.exec(query)) {
             var currentKey = decode(match[1]);
@@ -112,7 +112,7 @@ otp.core.Webapp = otp.Class({
 
         if(otp.config.showLogo) {
           //$('<div id="logo"><a href="'+otp.config.siteUrl+'"><img src="'+otp.config.logoGraphic+'" style="height:100%"></a></div>').appendTo('#branding');
-            $(Mustache.render(otp.templates.img, { 
+            $(Mustache.render(otp.templates.img, {
                 src : otp.config.logoGraphic,
                 style : 'height:100%',
                 wrapLink : true,
